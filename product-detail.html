@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - KidsMart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-child"></i>
+                <span>KidsMart</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">Cart</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="products.html" class="nav-icon"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <div class="product-detail-container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> > <a href="products.html">Products</a> > <span id="breadcrumb-product">Product</span>
+        </div>
+
+        <div class="product-detail">
+            <!-- Product Image -->
+            <div class="product-detail-image">
+                <img id="detail-image" src="" alt="Product">
+                <div class="rating-badge" id="detail-rating-badge"></div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-detail-info">
+                <h1 id="detail-title"></h1>
+                <p class="product-category" id="detail-category"></p>
+                
+                <div class="rating-section">
+                    <div class="stars" id="detail-stars"></div>
+                    <span id="detail-reviews"></span>
+                </div>
+
+                <div class="price-section">
+                    <span class="original-price" id="detail-original-price"></span>
+                    <span class="sale-price" id="detail-sale-price"></span>
+                    <span class="discount-badge" id="detail-discount"></span>
+                </div>
+
+                <div class="description-section">
+                    <h3>Product Details</h3>
+                    <p id="detail-description"></p>
+                </div>
+
+                <div class="highlights">
+                    <h3>Key Features</h3>
+                    <ul id="detail-features"></ul>
+                </div>
+
+                <div class="delivery-info">
+                    <h3>Delivery Information</h3>
+                    <p><i class="fas fa-truck"></i> Free Delivery on orders above ₹500</p>
+                    <p><i class="fas fa-calendar"></i> Delivery in 2-3 business days</p>
+                    <p><i class="fas fa-undo"></i> 30-day return policy</p>
+                </div>
+
+                <!-- Quantity Selector -->
+                <div class="quantity-selector">
+                    <label>Quantity:</label>
+                    <div class="quantity-control">
+                        <button onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                        <button onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="btn btn-primary btn-large" onclick="addToCart()" style="width: 100%; margin-top: 2rem;">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+
+                <button class="btn btn-secondary btn-large" onclick="addToWishlist()" style="width: 100%; margin-top: 1rem;">
+                    <i class="fas fa-heart"></i> Add to Wishlist
+                </button>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <section class="related-products">
+            <h2>Related Products</h2>
+            <div class="product-grid" id="related-products">
+                <!-- Related products will load here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📞 Toll Free: 1800-KIDSMART</p>
+                <p>📧 Email: support@kidsmart.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProductDetail();
+        });
+    </script>
+</body>
+</html>

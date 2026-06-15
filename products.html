@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - KidsMart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-child"></i>
+                <span>KidsMart</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">Cart</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="products.html" class="nav-icon"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <div class="products-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <h3>Filters</h3>
+            
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox" value="Clothing" onchange="applyFilters()"> Clothing</label>
+                <label><input type="checkbox" value="Shoes" onchange="applyFilters()"> Shoes</label>
+                <label><input type="checkbox" value="Toys" onchange="applyFilters()"> Toys & Games</label>
+                <label><input type="checkbox" value="Accessories" onchange="applyFilters()"> Accessories</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <label><input type="checkbox" value="0-500" onchange="applyFilters()"> ₹0 - ₹500</label>
+                <label><input type="checkbox" value="500-1000" onchange="applyFilters()"> ₹500 - ₹1000</label>
+                <label><input type="checkbox" value="1000-2000" onchange="applyFilters()"> ₹1000 - ₹2000</label>
+                <label><input type="checkbox" value="2000+" onchange="applyFilters()"> ₹2000+</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Rating</h4>
+                <label><input type="checkbox" value="4-5" onchange="applyFilters()"> ⭐⭐⭐⭐ & Up</label>
+                <label><input type="checkbox" value="3-5" onchange="applyFilters()"> ⭐⭐⭐ & Up</label>
+            </div>
+
+            <button class="btn btn-primary" onclick="clearFilters()" style="width: 100%;">Clear Filters</button>
+        </aside>
+
+        <!-- Main Products Area -->
+        <main class="products-main">
+            <div class="products-header">
+                <h2>All Products</h2>
+                <div class="sort-options">
+                    <label>Sort by:</label>
+                    <select onchange="sortProducts(this.value)">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid" id="all-products">
+                <!-- Products will load here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About KidsMart</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📞 Toll Free: 1800-KIDSMART</p>
+                <p>📧 Email: support@kidsmart.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            displayAllProducts();
+        });
+    </script>
+</body>
+</html>

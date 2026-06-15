@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsMart - Premium Kids Shopping India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-child"></i>
+                <span>KidsMart</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">Cart</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="products.html" class="nav-icon"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to KidsMart</h1>
+            <p>Premium Quality Kids Products - Delivered Across India</p>
+            <button class="btn btn-primary" onclick="window.location.href='products.html'">Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1503454537688-e6694e7d9739?w=600&h=500&fit=crop" alt="Kids Shopping">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="filterCategory('Clothing')">
+                <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+                <h3>Kids Clothing</h3>
+                <p>View Products</p>
+            </div>
+            <div class="category-card" onclick="filterCategory('Shoes')">
+                <div class="category-icon"><i class="fas fa-shoe-prints"></i></div>
+                <h3>Kids Shoes</h3>
+                <p>View Products</p>
+            </div>
+            <div class="category-card" onclick="filterCategory('Toys')">
+                <div class="category-icon"><i class="fas fa-gamepad"></i></div>
+                <h3>Toys & Games</h3>
+                <p>View Products</p>
+            </div>
+            <div class="category-card" onclick="filterCategory('Accessories')">
+                <div class="category-icon"><i class="fas fa-backpack"></i></div>
+                <h3>Accessories</h3>
+                <p>View Products</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" id="products">
+        <h2>Featured Premium Products</h2>
+        <div class="product-grid" id="featured-products">
+            <!-- Products will load here from JS -->
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <h2>Why Choose KidsMart?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                <h3>Fast Delivery</h3>
+                <p>Free shipping on orders above ₹500. Delivery in 2-3 business days.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>100% Safe</h3>
+                <p>All products certified safe for kids. Quality guaranteed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-undo"></i></div>
+                <h3>Easy Returns</h3>
+                <p>30-day return policy. No questions asked. Money-back guarantee.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>24/7 Support</h3>
+                <p>Call: +91-9876543210 | Email: support@kidsmart.in</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to Exclusive Offers</h2>
+            <p>Get 15% discount on your first order</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About KidsMart</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📞 Toll Free: 1800-KIDSMART</p>
+                <p>📧 Email: support@kidsmart.in</p>
+                <p>📍 Delivery: All India</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KidsMart India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
